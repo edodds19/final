@@ -8,10 +8,10 @@ DB = Sequel.connect(connection_string)                                          
 DB.create_table! :cocktails do
   primary_key :id
   String :name
-  String :description, text 
+  String :description, text: true
   String :base_spirit
   String :method
-  String :glassware: true
+  String :glassware
 end
 DB.create_table! :guests do
   primary_key :id
@@ -26,20 +26,20 @@ DB.create_table! :users do
   primary_key :id
   String :name
   String :email
-  String :password: true
+  String :password
 end
 
 # Insert initial (seed) data
 cocktails_table = DB.from(:cocktails)
 
-cocktails_table.insert(title: "Old Fashioned", 
+cocktails_table.insert(name: "Old Fashioned", 
                     description: "A true classic that never goes out of style.",
                     base_spirit: "Whiskey",
-                    method: "Stirred"
+                    method: "Stirred",
                     glassware: "Rocks glass")
 
-cocktails_table.insert(title: "Martini", 
+cocktails_table.insert(name: "Martini", 
                     description: "A favorite of James Bond and others.",
                     base_spirit: "Gin",
-                    method: "Stirred"
+                    method: "Stirred",
                     glassware: "Coupe")

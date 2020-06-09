@@ -1,10 +1,10 @@
 <div class="row">
     <div class="col-sm-9">
-        <h2>
-            <i class="far fa-calendar-alt"></i>
-            <%= @cocktail[:date] %>
-        </h2>
-        <h1><%= @cocktail[:title] %></h1>
+        # <h2>
+        #     <i class="far fa-calendar-alt"></i>
+        #     <%= @cocktail[:date] %>
+        # </h2>
+        <h1><%= @cocktail[:name] %></h1>
         <p><%= @cocktail[:description] %></p>
         <% for guest in @guests %>
             <% user = @users_table.where(:id => guest[:user_id]).to_a[0] %>
