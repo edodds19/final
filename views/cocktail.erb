@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-sm-9">
+    <div class="col-sm-4">
         <h1><%= @cocktail[:name] %></h1>
         <p><%= @cocktail[:description] %></p>
         <% for guest in @guests %>
@@ -17,11 +17,17 @@
             </div>
         <% end %>
         <p class="mt-5">
-            <a href="/cocktails/<%= @cocktail[:id] %>/guests/new" class="btn btn-primary">RSVP now!</a>
+            <a href="/cocktails/<%= @cocktail[:id] %>/guests/new" class="btn btn-primary">Select now!</a>
         </p>
     </div>
-    <div class="col-sm-3">
-        <h4>How many fellow guests have selected this libation to begin their journey?</h4>
+    <div class="col-sm-4">
+    <h4>Cocktail details:</h4>
+    <p><h6>Spirit:</h6> <%= @cocktail[:base_spirit] %></p>
+        <p><h6>Preparation Method:</h6> <%= @cocktail[:method] %></p>
+        <p><h6>Glassware:</h6> <%= @cocktail[:glassware] %></p>
+    </div>
+    <div class="col-sm-4">
+        <h6>How many fellow guests have selected this libation to begin their journey?</h6>
         <p><%= @count %></p>
     </div>
 </div>
