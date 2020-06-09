@@ -1,9 +1,5 @@
 <div class="row">
     <div class="col-sm-9">
-        # <h2>
-        #     <i class="far fa-calendar-alt"></i>
-        #     <%= @cocktail[:date] %>
-        # </h2>
         <h1><%= @cocktail[:name] %></h1>
         <p><%= @cocktail[:description] %></p>
         <% for guest in @guests %>
@@ -25,9 +21,7 @@
         </p>
     </div>
     <div class="col-sm-3">
-        <h3>Which one?</h3>
-        <p><%= @cocktail[:name] %></p>
-        <h3>How many guests so far?</h3>
+        <h4>How many fellow guests have selected this libation to begin their journey?</h4>
         <p><%= @count %></p>
     </div>
 </div>

@@ -1,5 +1,5 @@
 <h1>All Cocktails</h1>
 
 <% for cocktail in @cocktails %>
-    <p><a href="/cocktails/<%= cocktail[:id] %>"><%= cocktail[:title] %></a></p>
+    <p><a href="/cocktails/<%= cocktail[:id] %>"><%= cocktail[:name] %></a></p>
 <% end %>
