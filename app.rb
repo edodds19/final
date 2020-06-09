@@ -19,7 +19,7 @@ cocktails_table = DB.from(:cocktails)
 guests_table = DB.from(:guests)
 users_table = DB.from(:users)
 
-results = Geocoder.search("1590 Elmwood Avenue, Evanston, IL 60208")
+results = Geocoder.search("1590 Elmwood Avenue, Evanston, IL 60201")
 @lat_long = results.first.coordinates.join(",")
 
 before do
