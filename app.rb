@@ -65,12 +65,14 @@ end
 
 # Receiving end of new guest form
 post "/cocktails/:id/guests/create" do
-    guests_table.insert(:cocktail_id => params["id"],
+    if guests_table.insert(:cocktail_id => params["id"],
                        :going => params["going"],
                        :user_id => @current_user[:id],
                        :special_requests => params["special_requests"])
     @cocktail = cocktails_table.where(:id => params["id"]).to_a[0]
     view "create_guest"
+    else 
+        view "create_login_failed"
 end
 
 # Form to create a new user
