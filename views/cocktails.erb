@@ -1,5 +1,39 @@
-<h1>All Cocktails</h1>
+<div class="jumbotron">
+        <div class="container">
+
+<h1>Cocktail Journeys</h1>
 
 <% for cocktail in @cocktails %>
-    <p><a href="/cocktails/<%= cocktail[:id] %>"><%= cocktail[:name] %></a></p>
+    <p><a class="btn btn-primary btn-lg" href="/cocktails/<%= cocktail[:id] %>"><%= cocktail[:name] %></a></p>
 <% end %>
+</div>
+</div>
+
+<div class= "spiritguide">
+      <div class="container">
+        <div class="row">
+         <div class="col text-center">
+          <h2>Cocktail journeys, explained:</h2>
+           <body><i>(A brief description of what you can expect from each voyage)</i></body> 
+        </div>
+      </div>
+        <div class="row mt-4">
+          <div class="col-sm-6 col-md-4 text-center">
+            <h1><i class="fas fa-glass-whiskey"></i></h1>
+            <h4>Old Fashioned</h4>
+            <p>Whisk(e)y your thing? Look no further. Start the night off with a classic old fashioned and then let your bartender guide you through the wide world of brown spirits.</p>
+          </div>
+          <div class="col-sm-6 col-md-4 text-center">
+            <h1><i class="fas fa-blender"></i></h1>
+            <h4>Piña Colada</h4>
+            <p>If you want to kick back and relax like you're on a faraway beach even if it's the middle of winter, look no further.</p>
+          </div>
+          <div class="col-sm-6 col-md-4 text-center">
+            <h1><i class="fas fa-glass-martini"></i></h1>
+            <h4>Martini</h4>
+            <p>For the agents, secret and otherwise amongst us. A classy start followed by other gin libations. And don't listen to 007. Stir your martini.</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>

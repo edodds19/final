@@ -1,12 +1,8 @@
-<h2>
-    <i class="far fa-calendar-alt"></i>
-    <%= @cocktail[:date] %>
-</h2>
-<h1>RSVP for <%= @cocktail[:title] %></h1>
+<h1>RSVP for <%= @cocktail[:name] %></h1>
 
 <form action="/cocktails/<%= @cocktail[:id] %>/guests/create" method="POST">
   <div class="form-group">
-    <label>Are you going?</label>
+    <label>Do you want an <%= @cocktail[:name] %>?</label>
     <select class="form-control" name="going">
       <option value="1">Yes</option>
       <option value="0">No</option>
