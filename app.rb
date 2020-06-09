@@ -19,9 +19,6 @@ cocktails_table = DB.from(:cocktails)
 guests_table = DB.from(:guests)
 users_table = DB.from(:users)
 
-# results = Geocoder.search("1590 Elmwood Avenue, Evanston, IL 60201")
-# @lat_long = results.first.coordinates.join(",")
-
 # read your API credentials from environment variables
 account_sid = ENV["TWILIO_ACCOUNT_SID"]
 auth_token = ENV["TWILIO_AUTH_TOKEN"]
@@ -41,6 +38,10 @@ end
 get "/" do
     # before stuff runs
     @cocktails = cocktails_table.all
+
+    results = Geocoder.search("1590 Elmwood Ave, Evanston, IL 60201")
+    @lat_long = results.first.coordinates.join(",")
+
     view "cocktails"
 end
 
@@ -85,7 +86,7 @@ post "/users/create" do
                        :password => BCrypt::Password.create(params["password"]))
                        client.messages.create(
                         from: "+12029637855", 
-                        to: "+9176999920",
+                        to: "+19176999920",
                         body: "A new user has signed up for Centrum!")
     view "create_user"
 end
