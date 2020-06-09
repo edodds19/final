@@ -7,7 +7,7 @@
         <h1><%= @cocktail[:title] %></h1>
         <p><%= @cocktail[:description] %></p>
         <% for guest in @guests %>
-            <% user = @users_table.where(:id => rsvp[:user_id]).to_a[0] %>
+            <% user = @users_table.where(:id => guest[:user_id]).to_a[0] %>
             <div class="media">
                 <% if guest[:going] %>
                     <i class="fas fa-thumbs-up fa-3x mr-3"></i>
@@ -16,7 +16,7 @@
                 <% end %>
                 <div class="media-body">
                     <h5 class="mt-0"><%= user[:name] %></h5>
-                    <%= guest[:comments] %>
+                    <%= guest[:special_requests] %>
                 </div>
             </div>
         <% end %>
@@ -25,10 +25,8 @@
         </p>
     </div>
     <div class="col-sm-3">
-        <h3>When?</h3>
-        <p><%= @cocktail[:date] %></p>
-        <h3>Where?</h3>
-        <p><%= @cocktail[:location] %></p>
+        <h3>Which one?</h3>
+        <p><%= @cocktail[:name] %></p>
         <h3>How many guests so far?</h3>
         <p><%= @count %></p>
     </div>

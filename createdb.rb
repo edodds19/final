@@ -5,31 +5,41 @@ DB = Sequel.connect(connection_string)                                          
 #######################################################################################
 
 # Database schema - this should reflect your domain model
-DB.create_table! :events do
+DB.create_table! :cocktails do
   primary_key :id
-  String :title
-  String :description, text: true
-  String :date
-  String :location
+  String :name
+  String :description, text 
+  String :base_spirit
+  String :method
+  String :glassware: true
 end
-DB.create_table! :rsvps do
+DB.create_table! :guests do
   primary_key :id
-  foreign_key :event_id
+  foreign_key :cocktail_id
+  foreign_key :user_id
   Boolean :going
   String :name
   String :email
-  String :comments, text: true
+  String :special_requests, text: true
+end
+DB.create_table! :users do
+  primary_key :id
+  String :name
+  String :email
+  String :password: true
 end
 
 # Insert initial (seed) data
-events_table = DB.from(:events)
+cocktails_table = DB.from(:cocktails)
 
-events_table.insert(title: "Bacon Burger Taco Fest", 
-                    description: "Here we go again bacon burger taco fans, another Bacon Burger Taco Fest is here!",
-                    date: "June 21",
-                    location: "Kellogg Global Hub")
+cocktails_table.insert(title: "Old Fashioned", 
+                    description: "A true classic that never goes out of style.",
+                    base_spirit: "Whiskey",
+                    method: "Stirred"
+                    glassware: "Rocks glass")
 
-events_table.insert(title: "Kaleapolooza", 
-                    description: "If you're into nutrition and vitamins and stuff, this is the event for you.",
-                    date: "July 4",
-                    location: "Nowhere")
+cocktails_table.insert(title: "Martini", 
+                    description: "A favorite of James Bond and others.",
+                    base_spirit: "Gin",
+                    method: "Stirred"
+                    glassware: "Coupe")
