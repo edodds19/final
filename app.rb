@@ -19,6 +19,9 @@ cocktails_table = DB.from(:cocktails)
 guests_table = DB.from(:guests)
 users_table = DB.from(:users)
 
+results = Geocoder.search("1590 Elmwood Avenue, Evanston, IL 60208")
+@lat_long = results.first.coordinates.join(",")
+
 before do
     # SELECT * FROM users WHERE id = session[:user_id]
     @current_user = users_table.where(:id => session[:user_id]).to_a[0]

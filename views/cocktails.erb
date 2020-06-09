@@ -2,7 +2,7 @@
         <div class="container">
 
 <h1>Cocktail Journeys</h1>
-
+<p class="lead">We're a pop-up cocktail bar located on the top floor of one of Evanston's finest residences—open every Friday night at 7:00 P.M. You pick the first cocktail, we take you the rest of the way.</p>
 <% for cocktail in @cocktails %>
     <p><a class="btn btn-primary btn-lg" href="/cocktails/<%= cocktail[:id] %>"><%= cocktail[:name] %></a></p>
 <% end %>

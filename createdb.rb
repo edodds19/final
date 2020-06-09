@@ -38,6 +38,12 @@ cocktails_table.insert(name: "Old Fashioned",
                     method: "Stirred",
                     glassware: "Rocks glass")
 
+cocktails_table.insert(name: "Piña Colada", 
+                    description: "The ultimate beach cocktail.",
+                    base_spirit: "Rum",
+                    method: "Blended",
+                    glassware: "Hurricane glass")                    
+
 cocktails_table.insert(name: "Martini", 
                     description: "A favorite of James Bond and others.",
                     base_spirit: "Gin",
