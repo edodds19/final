@@ -70,11 +70,11 @@ post "/cocktails/:id/guests/create" do
                        :user_id => @current_user[:id],
                        :special_requests => params["special_requests"])
     @cocktail = cocktails_table.where(:id => params["id"]).to_a[0]
-    if session[:user_id] = @current_user[:id] 
-    view "create_guest"
-    else
-        view "create_login"
-    end
+    # if session[:user_id] = @current_user[:id] 
+    # view "create_guest"
+    # else
+    #     view "create_login"
+    # end
 end
 
 # Form to create a new user
